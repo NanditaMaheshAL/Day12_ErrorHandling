@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        try{
+            let num = parseInt(prompt("enter numerator"))
+            let denom = parseInt(prompt("enter denominator"))
+            if(denom===0){
+                throw new Error("Dividing by 0 gives infinity")
+            }
+            let result = num/denom
+            console.log(result)
+            if(isNaN(num)||isNaN(denom)){
+                throw new Error("Must be numbers")
+            }
+        }
+        catch(error){
+            console.error(error)
+        }
+        finally{
+            //always excecuted
+            //used to - close files, close connections, release resources
+            console.log("Finally block excecuted")
+        }
+        console.log("End of program")
+    </script>
+</body>
+</html>
